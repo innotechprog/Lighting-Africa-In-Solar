@@ -1,0 +1,99 @@
+/* Global project overrides and small custom styles.
+ * Tailwind utilities are loaded via CDN; use this file for
+ * non-utility tweaks (e.g. scrollbars, selection, print styles). */
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #0ea5e9;
+  color: #0b1120;
+}
+
+/* Simple scrollbar styling (WebKit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #64748b;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Section spacing and visual rhythm */
+.section-wrap {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-wrap {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.15);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.4);
+}
+
+/* Page headers (inner pages) */
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.dark .page-header {
+  border-bottom-color: rgba(51, 65, 85, 0.5);
+}
+
+.page-header .section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0ea5e9;
+}
+
+.dark .page-header .section-label {
+  color: #7dd3fc;
+}
+
+/* Policy / legal content area */
+.policy-content {
+  line-height: 1.7;
+}
+
+.policy-content section {
+  margin-top: 1.75rem;
+}
+
+.policy-content section:first-of-type {
+  margin-top: 0;
+}
+

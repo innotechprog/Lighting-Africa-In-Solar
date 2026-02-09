@@ -1,13 +1,13 @@
 <?php
 /**
  * Simple one-time script to download 5 solar installation images
- * into the local "images" folder as PNG files.
+ * into the local "assets/images" folder as PNG files.
  *
  * Usage (XAMPP):
  * 1. Start Apache in XAMPP.
  * 2. Visit in your browser:
  *    http://localhost/Lighting%20africa%20in%20solar/download_solar_images.php
- * 3. After it finishes, check the "images" folder for:
+ * 3. After it finishes, check the "assets/images" folder for:
  *    - solar-install-1.png
  *    - solar-install-2.png
  *    - solar-install-3.png
@@ -16,7 +16,7 @@
  */
 
 // Folder where images will be saved (relative to this script)
-$imagesDir = __DIR__ . DIRECTORY_SEPARATOR . 'images';
+$imagesDir = __DIR__ . DIRECTORY_SEPARATOR . 'assets' . DIRECTORY_SEPARATOR . 'images';
 
 if (!is_dir($imagesDir)) {
     if (!mkdir($imagesDir, 0775, true) && !is_dir($imagesDir)) {
@@ -133,7 +133,7 @@ foreach ($urls as $url) {
         </ul>
 
         <p>If all show a green check, you can now use the images in your site, for example:</p>
-        <p><code>&lt;img src="images/solar-install-1.png" alt="Residential solar installation"&gt;</code></p>
+        <p><code>&lt;img src="assets/images/solar-install-1.png" alt="Residential solar installation"&gt;</code></p>
     </div>
 </body>
 </html>
